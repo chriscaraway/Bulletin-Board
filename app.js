@@ -1,32 +1,28 @@
-require("doten").config();
-const exp = require("express");
+require("dotenv").config();
+const express = require("express");
+const app = express();
 const bodyParser = require("body-parser");
-const app = exp();
-const Messages = require(".util/messages");
+const Bulletin = require(".util/board");
 const query = require("./query.js");
 
-app.use(exp.static("assets"));
+app.set("view engine", "ejs");
+app.use(express.static("assets"));
 
-
-function renderMessages(res, message) {
-	Messages.getAll().then(function(items) {
-		res.render("list", {
-			items: items,
-			message: message,
-		});
-	});
-}
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
 app.get("/", function(req, res) {
-	renderMessages(res);
+	Bulletin.getAll(function(result) {
+		res.render("board",{
+			messages: result.rows,
+		});
+	});
 });
 
-// app.post("/", function(req, res) {
-// 	Mesages.add(req.body.item).then(function() {
-// 		renderMessages(res, "Posted" + req.body.item);
-//
-// });
+app.get("*", function (req, res) {
+	res.send('Whoops!');
+});
 
-// query("SELECT * FROM ChrisCaraway"). then (function(res) {
-// 	console.log(res.rows);
-// });
+app.listen(3000, function() {
+	console.log("Your server is available at localhost:3000!");
+});

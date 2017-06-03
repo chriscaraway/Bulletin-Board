@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>BULLETIN BOARD</title>
+	</head>
+	<body>
+			<table>
+				<% for (let i = 0; i < board.length; i++); { %>
+					<tr>
+						<td><%= messages[i].name %> </td>
+					</tr>
+				<% } %>
+			</table>
+	</body>
+</html>	
