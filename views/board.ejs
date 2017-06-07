@@ -1,14 +1,30 @@
 <html>
 	<head>
-		<title>BULLETIN BOARD</title>
+
+		<link rel="stylesheet" type="text/css" href="./assets/reset.css">
+		<link rel="stylesheet" type="text/css" href="./assets/style.css">
+
+		<title>Food Board</title>.
 	</head>
 	<body>
-			<table>
-				<% for (let i = 0; i < board.length; i++); { %>
-					<tr>
-						<td><%= messages[i].name %> </td>
-					</tr>
-				<% } %>
-			</table>
+
+		<h1>Food Board</h1>
+
+		<p>
+		 What do you want to eat today?
+		</p>
+
+		<table>
+			<% for (let i = 0; i < messages.length; i++) { %>
+				<tr>
+				 <td><%= messages[i].title %> </td>
+				 <td><%= messages[i].body %> </td>
+				 <td><%= messages[i].created %> </td>
+				</tr>
+			<% } %>
+		</table>
+
+		<a href="http://localhost:3000/form">View database</a>
+
 	</body>
-</html>	
+</html>
