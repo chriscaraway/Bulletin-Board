@@ -1,25 +1,31 @@
-*, *:before, *:after {
-	box-sizing: border-box;
-}
-
 h1 {
   font-family: "Raleway", sans-serif;
   font-size: 80px
 }
 
 
+
 p {
+	font-family: "Raleway", sans-serif;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	color: black;
+	font-size: 30px
 }
 
+
 body {
+	/*background-image: */
 	font-size: 15px;
 	text-align: center;
 	color: black;
+	padding-left: 55px;
 }
 
-table {
+table, th, td {
+   border: 2px solid black;
+}
 
+a {
+	padding-top: 25px;
 }

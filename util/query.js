@@ -12,10 +12,8 @@ const bodyParser = require("body-parser");
 
 //	console.log(req.body)
 
-//	need res.render("page/bulletinboard", {id: req.params.bulletinboard})
-
 pool.on("error", function(err) {
-	console.error("Encountered an erro", err);
+	console.error("Encountered an error", err);
 });
 
 //	Export a simple function that just runs a query

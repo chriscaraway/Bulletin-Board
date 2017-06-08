@@ -28,11 +28,11 @@ app.get("/", function(req, res) {
 
 app.post("/", function(req, res) {
 	if (req.body.title === "") {
-		res.redirect("wrong turn");
+		res.redirect('/error?message=You%20Need%20Both%20Items%20To%20Post');
 		return;
 	}
 	else if (req.body.body === "") {
-		res.redirect("wrong turn");
+		res.redirect('/error?message=You%20Need%20Both%20Items%20To%20Post');
 		return;
 	}
 
