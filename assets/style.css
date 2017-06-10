@@ -3,8 +3,6 @@ h1 {
   font-size: 80px
 }
 
-
-
 p {
 	font-family: "Raleway", sans-serif;
 	padding-top: 10px;
@@ -12,7 +10,6 @@ p {
 	color: black;
 	font-size: 30px
 }
-
 
 body {
 	/*background-image: */
@@ -23,9 +20,11 @@ body {
 }
 
 table, th, td {
-   border: 2px solid black;
-}
-
-a {
-	padding-top: 25px;
+  font-family: "Raleway", sans-serif;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid black;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
 }
