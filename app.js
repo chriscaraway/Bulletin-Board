@@ -38,7 +38,7 @@ app.post("/", function(req, res) {
 
 Bulletin.add([req.body.title, req.body.body])
 	.then(function() {
-		renderBoard(res, "Saved" + req.body.title);
+		renderBoard(res);
 	});
 
 });
